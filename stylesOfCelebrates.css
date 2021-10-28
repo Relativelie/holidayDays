@@ -1,0 +1,191 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/images/imageSix.jpg");
+}
+
+
+/* CHOOSE YOUR OWN PAGE */
+.homeButtonBlock {
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+}
+
+.homeBtn {
+  position: relative;
+    background-image: url("images/homeicon.png");
+    width: 70px;
+    height: 70px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    background-size: cover ;
+    cursor: pointer;
+  }
+  .homeBtn:hover {
+    bottom: 5px;
+  }
+
+  /* CHOOSE DATE */
+.chooseDate {
+  display: flex;
+  justify-content: center;
+}
+
+  .chooseDate label {
+    font-size: 45px;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    color: #fff;
+    margin-right: 30px;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .chooseDate input {
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  /* CALCULATE VALUE BLOCK */
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .calculateValueBlock h2 {
+    font-size: 150px;
+    font-family: 'Caveat', cursive;
+    text-shadow: 0 0 16px rgb(213, 250, 255);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .calculateValueBlock h3{
+    font-size: 50px;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+  }
+
+  .valueItem h2 {
+    height: 200px;
+  }
+
+  .calculateValueBlock {
+    width: 253px;
+  }
+
+
+
+/* CHOOSE YOUR OWN DATE ADVICE*/
+  .adviceBlock {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .adviceTextBlock {
+    width: 700px;
+    background-color: rgba(255, 255, 255, 0.239);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+    padding: 10px;
+  }
+
+
+  .adviceTextBlock button {
+    border-radius: 10px;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    border: 1px solid rgba(255, 255, 255, 0.287);
+    background-color: rgb(0, 107, 27);
+    padding: 10px 20px 10px 20px;
+    animation: borderShine;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite; 
+    animation-direction: alternate;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 1s ease;
+  }
+
+
+  @keyframes borderShine {
+    0% {
+      box-shadow: none;
+    }
+  
+    100% {
+      box-shadow: 0 2px 5px rgba(248, 208, 77, 0.719), 0 2px 10px rgb(255, 255, 255);   
+    }
+  }
+
+  .adviceTextBlock button:hover {
+    animation: none;
+    background-color: rgb(91, 5, 204);
+ }
+
+  .advice {
+    height: 150px;
+    font-size: 46px;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+  }
+
+
+
+
+  @media all and (max-width: 826px) {
+    body {
+      background-size: inherit;
+    }
+  }
+
+  @media all and (max-width: 700px) {
+    .valueItem h2 {
+      margin: 50px;
+    }
+
+    .chooseDate {
+      margin-top: 80px;
+    }
+  }
+
+  @media all and (max-width: 500px) {
+
+    .valueItem h2 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 40px black;
+    }
+
+    .valueItem h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .chooseDate {
+      margin-top: 80px;
+    }
+
+    .chooseDate {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chooseDate label {
+      padding-bottom: 20px;
+      text-align: center;
+    }
+  }
