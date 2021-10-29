@@ -334,13 +334,32 @@
   }
 }
 
+@media all and (max-width: 700px) {
+  .chooseYourDate, .form-select {
+    font-size: 15px !important;
+    width: 200px !important;
+  }
+
+  .chooseYourDate {
+    padding: 6px 5px;
+  }
+
+  .form-control {
+    height: 40px !important;
+  }
+
+  .headerText h1, .parOr p {
+    font-size: 35px;
+  }
+}
+
 @media all and (max-width: 600px) {
 
   .headerText {
     padding: 25px 0 0 0;
   }
 
-  .headerText h1 {
+  .headerText h1, .parOr p {
     font-size: 40px;
   }
 
@@ -369,16 +388,50 @@
     top: -15.5%;
     right: -10%;
   }
-}
 
+  .card {
+    width: 200px !important;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  }
 
-@media all and (max-width: 450px) {
-  .headerText h1 {
-    font-size: 30px;
+  .card-text {
+    display: none;
   }
 
   .card-body h5 {
-    font-size: 25px;
+    font-size: 20px;
+  }
+
+  .card-body .btn {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .headerText h1, .parOr p  {
+    font-size: 20px;
+  }
+
+  .chooseYourDate, .form-select {
+    font-size: 10px !important;
+    width: 140px !important;
+  }
+
+  .carousel-inner {
+    height: 200px !important;
+  }
+
+  .form-control {
+    height: 30px !important;
+  }
+}
+
+@media all and (max-width: 450px) {
+
+  .card-body h5 {
+    font-size: 20px;
   }
   
   .carousel-inner {
@@ -392,17 +445,47 @@
   .card-body .btn {
     font-size: 15px;
   }
+
   }
 
+  @media all and (max-width: 360px) {
+    .card-body h5 {
+      font-size: 15px !important;
+    }
 
+    .calculateValueBlock h3 {
+      margin: 0;
+    }
 
-  @media all and (max-width: 300px) {
+    .closeModalBlock img {
+      width: 25px;
+    }
+
+    .closeModalBlock {
+      width: 25px;
+      height: 25px;
+      display: flex;
+    }
+  }
+
+  @media all and (max-width: 320px) {
+    .chooseYourDate, .form-select {
+      width: 70px !important;
+    }
 
     .headerText h1 {
-      font-size: 20px;
+      font-size: 15px;
     }
     
-      .carousel-inner {
-        height: 150px;
-      }
+    .carousel-inner {
+      height: 150px;
+    }
+
+    .carousel-inner {
+      height: 190px !important;
+    }
+
+    .carousel-item {
+      top: 5px
+    }
     }
