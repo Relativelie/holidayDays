@@ -2,7 +2,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/images/imageSix.jpg");
+  background-image: url("../images/imageSix.jpg");
 }
 
 
@@ -15,7 +15,7 @@ body {
 
 .homeBtn {
   position: relative;
-    background-image: url("images/homeicon.png");
+    background-image: url("../images/homeicon.png");
     width: 70px;
     height: 70px;
     border: none;

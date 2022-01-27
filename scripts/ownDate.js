@@ -7,7 +7,6 @@ const celebrateName = document.querySelector(".chooseDate")
 let celebrateDay;
 // for another page(with input)
 if (dateField != null) {
-    console.log(typeof dateField.type);
     const calculateButton = document.querySelector(".calendar button");
 
     // add min/value=tomorrow for input.
@@ -40,25 +39,6 @@ if (dateField != null) {
     });
 }
 
-else if (celebrateName.className === "chooseDate newYear") {
-    celebrateDay = new Date("January25,2022,2022 00:00");
-}
-
-else if (celebrateName.className === "chooseDate starWars") {
-    celebrateDay = new Date("May4,2022,2022 00:00");
-}
-
-else if (celebrateName.className === "chooseDate valentinesDay") {
-    celebrateDay = new Date("February14,2022,2022 00:00");
-}
-
-else if (celebrateName.className === "chooseDate sleepDay") {
-    celebrateDay = new Date("Martch14,2022,2022 00:00");
-}
-
-else if (celebrateName.className === "chooseDate halloween") {
-    celebrateDay = new Date("October31,2022,2022 00:00");
-}
 
 function calculateDaysBeforeCelebrateDay() {
     const msInSecond = 1000;
@@ -90,9 +70,8 @@ function calculateDaysBeforeCelebrateDay() {
     }
 }
 
+
 let timerOn = setInterval(calculateDaysBeforeCelebrateDay, 1000);
-
-
 // CHOOSE ADVICE
 const adviceButton = document.querySelector(".adviceTextBlock button");
 adviceButton.addEventListener("click", getAdvice)
@@ -101,7 +80,6 @@ async function getAdvice() {
     const result = await fetch("https://api.adviceslip.com/advice");
     const resultReceived = await result.json();
     document.querySelector(".advice").textContent = resultReceived.slip.advice;
-    console.log(resultReceived.slip.advice)
 }
 
 

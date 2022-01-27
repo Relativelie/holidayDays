@@ -31,18 +31,20 @@ function showSearch() {
     else {
         document.querySelector(".searchBlock").style.display = "none";
     }
-
 }
+
+
 //  request to find all hollidays
 document.querySelector("select").addEventListener("input", getHolidays);
 
 async function getHolidays() {
     let selectedCountry = document.querySelector("select").options[document.querySelector("select").selectedIndex].value;
-    const result = await fetch(`https://holidayapi.com/v1/holidays?pretty&key=4a635eb0-3872-4c52-8e4e-da6a681d4713&country=${selectedCountry}&year=2020`);
+    const result = await fetch(`https://holidayapi.com/v1/holidays?pretty&key=4a635eb0-3872-4c52-8e4e-da6a681d4713&country=${selectedCountry}&year=2021`);
     const resultReceived = await result.json();
     addInfoOnGeneralPage(resultReceived.holidays)
-
 }
+
+
 let celebrateDay = []
 function addInfoOnGeneralPage(requestResult) {
     celebrateDay = [];
@@ -59,11 +61,12 @@ function addInfoOnGeneralPage(requestResult) {
         </div>
         </div>`;
         cardBackground(holidayName);
-        if (parseInt(requestResult[i].date[5] + requestResult[i].date[6]) < 12) {
-            celebrateDay.push([requestResult[i].date.replace("2020", "2022"), requestResult[i].name])
+        let currentMonth = new Date().getMonth() + 1;
+        if (parseInt(requestResult[i].date[5] + requestResult[i].date[6]) <= currentMonth) {
+            celebrateDay.push([requestResult[i].date.replace("2021", "2023"), requestResult[i].name])
         }
         else {
-            celebrateDay.push([requestResult[i].date.replace("2020", "2021"), requestResult[i].name])
+            celebrateDay.push([requestResult[i].date.replace("2021", "2022"), requestResult[i].name])
         }
     }
 
@@ -78,7 +81,7 @@ document.addEventListener("keyup", closeModalEsc);
 
 function openModal() {
     document.querySelector(".selectedHoliday").style.display = "flex";
-    document.querySelector(".modalBlock").style.backgroundImage = `url('images/${backgroundImages[item]}')`;
+    document.querySelector(".modalBlock").style.backgroundImage = `url('../images/${backgroundImages[item]}')`;
     item++
     if (item === backgroundImages.length) {
         item = 0;
@@ -97,7 +100,6 @@ function closeModalEsc(e) {
         clearInterval(timerOn);
     }
 }
-
 
 function checkDate(e) {
     let classOfButton = e.classList[0];
@@ -163,7 +165,7 @@ search.addEventListener('keyup', function (event) {
 // BACKGROUND
 let item = 0;
 function cardBackground(name) {
-    document.querySelector(`.someBackground${name}`).style.backgroundImage = `url('images/${backgroundImages[item]}')`;
+    document.querySelector(`.someBackground${name}`).style.backgroundImage = `url('../images/${backgroundImages[item]}')`;
     item++
     if (item === backgroundImages.length) {
         item = 0;
